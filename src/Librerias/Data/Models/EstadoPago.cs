@@ -3,7 +3,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace agremiacion.Models;
+namespace Data.Models;
 
 public partial class EstadoPago
 {

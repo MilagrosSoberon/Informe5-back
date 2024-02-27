@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace agremiacion.Models;
+namespace Data.Models;
 
 public partial class agremiaciong11Context : DbContext
 {
