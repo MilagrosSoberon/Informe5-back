@@ -1,4 +1,5 @@
-using agremiacion.Models;
+
+using Data.Models;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
