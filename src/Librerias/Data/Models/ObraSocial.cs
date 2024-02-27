@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace Data.Models;
 
@@ -11,5 +12,6 @@ public partial class ObraSocial
 
     public string Nombre { get; set; }
 
+    [JsonIgnore]
     public virtual ICollection<Factura> Factura { get; set; } = new List<Factura>();
 }
