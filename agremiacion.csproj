@@ -36,8 +36,4 @@
 
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="src\Librerias\Services\" />
-  </ItemGroup>
-
 </Project>
