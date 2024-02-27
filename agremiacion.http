@@ -1,0 +1,6 @@
+@agremiacion_HostAddress = http://localhost:5094
+
+GET {{agremiacion_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
