@@ -10,9 +10,9 @@ public partial class Factura
 {
     public int Id { get; set; }
 
-    public DateOnly Fecha { get; set; }
+    public DateTime Fecha { get; set; }
 
-    public DateOnly FechaVencimiento { get; set; }
+    public DateTime FechaVencimiento { get; set; }
 
     public int Numero { get; set; }
 
