@@ -8,6 +8,7 @@ namespace Core.DTO.request
 {
     public class CobranzaDtoIn
     {
+        public int Id { get; set; }
             public DateTime Fecha { get; set; }
 
             public float Monto { get; set; }
