@@ -15,6 +15,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<agremiaciong11Context>(options =>
 options.UseNpgsql(builder.Configuration.GetConnectionString("Connection")));
 
+builder.Services.AddScoped<Services.IObraSocialService, Services.ObraSocialService>();
 
 var app = builder.Build();
 
