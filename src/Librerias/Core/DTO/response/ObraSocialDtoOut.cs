@@ -1,6 +1,7 @@
-﻿namespace agremiacion.src.Librerias.Core.DTO.response
+﻿namespace Core.DTO.response
 {
     public class ObraSocialDtoOut
     {
+        public required string Nombre { get; set; }
     }
 }

@@ -1,6 +1,7 @@
-﻿namespace agremiacion.src.Librerias.Core.DTO.response
+﻿namespace Core.DTO.response
 {
     public class EstadoPagoDtoOut
     {
+        public required string Descripcion { get; set; }
     }
 }
