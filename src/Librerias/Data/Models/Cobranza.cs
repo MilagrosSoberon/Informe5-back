@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace agremiacion.Models;
+namespace Data.Models;
 
 public partial class Cobranza
 {

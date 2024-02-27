@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace agremiacion.Models;
+namespace Data.Models;
 
 public partial class agremiaciong11Context : DbContext
 {
@@ -35,7 +35,7 @@ public partial class agremiaciong11Context : DbContext
                 .ValueGeneratedOnAdd()
                 .HasColumnName("numero");
 
-            entity.HasOne(d => d.IdFacturaNavigation).WithMany(p => p.Cobranza)
+            entity.HasOne(d => d.Factura).WithMany(p => p.Cobranza)
                 .HasForeignKey(d => d.IdFactura)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("Cobranza_idFactura_fkey");
@@ -66,12 +66,12 @@ public partial class agremiaciong11Context : DbContext
                 .ValueGeneratedOnAdd()
                 .HasColumnName("numero");
 
-            entity.HasOne(d => d.IdEstadoPagoNavigation).WithMany(p => p.Factura)
+            entity.HasOne(d => d.EstadoPago).WithMany(p => p.Factura)
                 .HasForeignKey(d => d.IdEstadoPago)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("Factura_idEstadoPago_fkey");
 
-            entity.HasOne(d => d.IdObraSocialNavigation).WithMany(p => p.Factura)
+            entity.HasOne(d => d.ObraSocial).WithMany(p => p.Factura)
                 .HasForeignKey(d => d.IdObraSocial)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("Factura_idObraSocial_fkey");
