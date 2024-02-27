@@ -1,6 +1,21 @@
-﻿namespace agremiacion.src.Librerias.Core.DTO.request
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Core.DTO.request
 {
     public class CobranzaDtoIn
     {
+            public DateTime Fecha { get; set; }
+
+            public float Monto { get; set; }
+
+            public int Numero { get; set; }
+
+            public int IdFactura { get; set; }
+
+        
     }
 }

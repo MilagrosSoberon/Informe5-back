@@ -1,6 +1,14 @@
-﻿namespace agremiacion.src.Librerias.Core.DTO.request
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Core.DTO.request
 {
     public class ObraSocialDtoIn
     {
+
+        public string Nombre { get; set; }
     }
 }
