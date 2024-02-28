@@ -8,7 +8,8 @@ namespace Core.DTO.request
 {
     public class ObraSocialDtoIn
     {
-        public int Id { get; set; }
-        public string Nombre { get; set; }
+        public required int Id { get; set; }
+        public required string Nombre { get; set; }
+
     }
 }

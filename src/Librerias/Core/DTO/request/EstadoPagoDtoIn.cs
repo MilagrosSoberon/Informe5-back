@@ -9,6 +9,7 @@ namespace Core.DTO.request
 {
     public class EstadoPagoDtoIn
     {
+        public int Id { get; set; }
         public string Descripcion { get; set; }
     }
 }
