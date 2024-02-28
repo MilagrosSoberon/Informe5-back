@@ -12,5 +12,7 @@ namespace Services
         Task<ObraSocial> Create(ObraSocialDtoIn newObraSocialDTO);
         Task Update(int id, ObraSocialDtoIn obraSocial);
         Task Delete(int id);
+        Task<ObraSocialIdDtoOut> GetIdByNombre(string nombre);
+
     }
 }

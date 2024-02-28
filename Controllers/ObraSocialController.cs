@@ -104,24 +104,24 @@ namespace agremiacion.Controllers
             return NotFound(new { message = $"LA obraSocial con ID = {id} no existe." });
         }
 
-        /* [HttpGet("IdxNombre/{nombre}")]
-         public async Task<ActionResult<BancoIdDtoOut>> ObtenerIdPorNombre(string nombre)
+         [HttpGet("IdxNombre/{nombre}")]
+         public async Task<ActionResult<ObraSocialIdDtoOut>> ObtenerIdPorNombre(string nombre)
          {
              try
              {
-                 var bancoId = await _service.GetIdByNombre(nombre);
+                 var obraSocialId = await _service.GetIdByNombre(nombre);
 
-                 if (bancoId is null)
+                 if (obraSocialId is null)
                  {
                      return NotFound("No se encontró un banco con el nombre proporcionado.");
                  }
-                 return bancoId;
+                 return obraSocialId;
              }
              catch (Exception ex)
              {
                  return StatusCode(500, $"Error interno del servidor: {ex.Message}");
              }
-         }*/
+         }
 
         /* [HttpGet("IdxCodigo/{codigo}")]
          public async Task<ActionResult<BancoIdDtoOut>> ObtenerIdPorCodigo(string codigo)

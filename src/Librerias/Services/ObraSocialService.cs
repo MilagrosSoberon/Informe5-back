@@ -82,24 +82,14 @@ namespace Services
 
         }
 
-        /* public async Task<FacturaIdDtoOut> GetIdByNombre(string nombre)
-         {
-             var banco = await _context.Banco
-                 .Where(b => b.Nombre == nombre)
-                 .Select(b => new BancoIdDtoOut { Id = b.Id })
-                 .SingleOrDefaultAsync();
-
-             return banco;
-         }*/
-
-        /*public async Task<BancoIdDtoOut> GetIdByCodigo(string codigo)
+        public async Task<ObraSocialIdDtoOut> GetIdByNombre(string nombre)
         {
-            var banco = await _context.Banco
-                .Where(b => b.Codigo == codigo)
-                .Select(b => new BancoIdDtoOut { Id = b.Id })
+            var obraSocial = await _context.ObraSocial
+                .Where(b => b.Nombre == nombre)
+                .Select(b => new ObraSocialIdDtoOut { Id = b.Id })
                 .SingleOrDefaultAsync();
 
-            return banco;
-        }*/
+            return obraSocial;
+        }
     }
 }
