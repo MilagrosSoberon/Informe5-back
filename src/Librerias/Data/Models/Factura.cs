@@ -22,6 +22,7 @@ public partial class Factura
 
     public int IdObraSocial { get; set; }
 
+    [JsonIgnore]
     public virtual ICollection<Cobranza> Cobranza { get; set; } = new List<Cobranza>();
 
     [JsonIgnore]

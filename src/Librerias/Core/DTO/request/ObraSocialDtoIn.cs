@@ -10,5 +10,6 @@ namespace Core.DTO.request
     {
         public required int Id { get; set; }
         public required string Nombre { get; set; }
+
     }
 }
