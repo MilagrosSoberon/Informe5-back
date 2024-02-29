@@ -101,15 +101,32 @@ namespace Services
 
         }
 
-       /* public async Task<FacturaIdDtoOut> GetIdByNombre(string nombre)
-        {
-            var banco = await _context.Banco
-                .Where(b => b.Nombre == nombre)
-                .Select(b => new BancoIdDtoOut { Id = b.Id })
-                .SingleOrDefaultAsync();
+         public async Task<IEnumerable<FacturaDtoOut>> GetFacturaByObraSocial(string obraSocial)
+         {
+             var factura = await _context.Factura
+                 .Where(f => f.ObraSocial.Nombre == obraSocial)
+                 .Select(f => new FacturaDtoOut
+                 {
+                     Fecha = f.Fecha,
+                     FechaVencimiento = f.FechaVencimiento,
+                     Numero = f.Numero,
+                     ImporteTotal = f.ImporteTotal,
+                     EstadoPago = f.EstadoPago.Descripcion,
+                     ObraSocial = f.ObraSocial.Nombre
+                 }).ToListAsync();
 
-            return banco;
-        }*/
+            return factura;
+         }
+
+        /* public async Task<FacturaIdDtoOut> GetIdByNombre(string nombre)
+         {
+             var banco = await _context.Banco
+                 .Where(b => b.Nombre == nombre)
+                 .Select(b => new BancoIdDtoOut { Id = b.Id })
+                 .SingleOrDefaultAsync();
+
+             return banco;
+         }*/
 
         /*public async Task<BancoIdDtoOut> GetIdByCodigo(string codigo)
         {

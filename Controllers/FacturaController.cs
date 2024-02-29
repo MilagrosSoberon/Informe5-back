@@ -97,6 +97,14 @@ namespace agremiacion.Controllers
 
         }
 
+        [HttpGet("factXObraSocial/{obraSocial}")]
+
+        public async Task<IEnumerable<FacturaDtoOut>> GetFacturaByObraSocial(string obraSocial)
+        {
+            return await _service.GetFacturaByObraSocial(obraSocial);
+
+        }
+
         [NonAction]
 
         public NotFoundObjectResult FacturaNotFound(int id)
