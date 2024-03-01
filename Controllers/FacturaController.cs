@@ -3,6 +3,7 @@ using Core.DTO.response;
 using Services;
 using Microsoft.AspNetCore.Mvc;
 using Services;
+using Microsoft.AspNetCore.JsonPatch;
 
 namespace agremiacion.Controllers
 
@@ -112,43 +113,64 @@ namespace agremiacion.Controllers
             return NotFound(new { message = $"LA factura con ID = {id} no existe." });
         }
 
-       /* [HttpGet("IdxNombre/{nombre}")]
-        public async Task<ActionResult<BancoIdDtoOut>> ObtenerIdPorNombre(string nombre)
+        /* [HttpGet("IdxNombre/{nombre}")]
+         public async Task<ActionResult<BancoIdDtoOut>> ObtenerIdPorNombre(string nombre)
+         {
+             try
+             {
+                 var bancoId = await _service.GetIdByNombre(nombre);
+
+                 if (bancoId is null)
+                 {
+                     return NotFound("No se encontró un banco con el nombre proporcionado.");
+                 }
+                 return bancoId;
+             }
+             catch (Exception ex)
+             {
+                 return StatusCode(500, $"Error interno del servidor: {ex.Message}");
+             }
+         }*/
+
+        /* [HttpGet("IdxCodigo/{codigo}")]
+         public async Task<ActionResult<BancoIdDtoOut>> ObtenerIdPorCodigo(string codigo)
+         {
+             try
+             {
+                 var bancoId = await _service.GetIdByCodigo(codigo);
+
+                 if (bancoId is null)
+                 {
+                     return NotFound("No se encontró un banco con el nombre codigo.");
+                 }
+                 return bancoId;
+             }
+             catch (Exception ex)
+             {
+                 return StatusCode(500, $"Error interno del servidor: {ex.Message}");
+             }
+         }*/
+
+        [HttpPatch("{id}")]
+        public async Task<IActionResult> UpdateEP(int id, [FromQuery] int idEstadoPago)
         {
-            try
+            var facturaToUpdate = await _service.GetById(id);
+            if (facturaToUpdate is not null)
             {
-                var bancoId = await _service.GetIdByNombre(nombre);
+                await _service.UpdateEstadoPago(id, idEstadoPago);
+                return NoContent();
 
-                if (bancoId is null)
-                {
-                    return NotFound("No se encontró un banco con el nombre proporcionado.");
-                }
-                return bancoId;
             }
-            catch (Exception ex)
+            else
             {
-                return StatusCode(500, $"Error interno del servidor: {ex.Message}");
-            }
-        }*/
+                return FacturaNotFound(id);
 
-       /* [HttpGet("IdxCodigo/{codigo}")]
-        public async Task<ActionResult<BancoIdDtoOut>> ObtenerIdPorCodigo(string codigo)
-        {
-            try
-            {
-                var bancoId = await _service.GetIdByCodigo(codigo);
+            }
 
-                if (bancoId is null)
-                {
-                    return NotFound("No se encontró un banco con el nombre codigo.");
-                }
-                return bancoId;
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Error interno del servidor: {ex.Message}");
-            }
-        }*/
+            
+
+        }
+
 
     }
 
