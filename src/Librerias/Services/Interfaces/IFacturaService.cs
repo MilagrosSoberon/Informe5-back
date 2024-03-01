@@ -12,5 +12,7 @@ namespace Services
         Task<Factura> Create(FacturaDtoIn newFacturaDTO);
         Task Update(int id, FacturaDtoIn factura);
         Task Delete(int id);
+
+        Task<IEnumerable<FacturaDtoOut>> GetFacturaByObraSocial(string obraSocial);
     }
 }
