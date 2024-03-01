@@ -106,6 +106,27 @@ namespace agremiacion.Controllers
 
         }
 
+        [HttpGet("IdxNumero/{numero}")]
+        //no autorizo se usa en el registrar
+        public async Task<ActionResult<FacturaIdDtoOut>> GetIdByNumero(int numero)
+        {
+            try
+            {
+                var facturaId = await _service.GetIdFactura(numero);
+
+                if (facturaId is null)
+                {
+                    return NotFound("No se encontró una factura con el num proporcionado.");
+                }
+                return facturaId;
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error interno del servidor: {ex.Message}");
+            }
+        }
+
+
         [NonAction]
 
         public NotFoundObjectResult FacturaNotFound(int id)

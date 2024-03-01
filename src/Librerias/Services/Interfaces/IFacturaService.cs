@@ -15,6 +15,9 @@ namespace Services
 
         Task<IEnumerable<FacturaDtoOut>> GetFacturaByObraSocial(string obraSocial);
 
+        Task<FacturaIdDtoOut> GetIdFactura(int numero);
+
         Task UpdateEstadoPago(int id, int idEstadoPago);
+
     }
 }
