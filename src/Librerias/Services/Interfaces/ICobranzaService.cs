@@ -12,5 +12,7 @@ namespace Services
         Task<Cobranza> Create(CobranzaDtoIn newCobranzaDto);
         Task Update(int id, CobranzaDtoIn cobranza);
         Task Delete(int id);
+
+        Task<int> GetLastNumber();
     }
 }

@@ -88,5 +88,11 @@ namespace Services
             }
 
         }
+
+        public async Task<int> GetLastNumber()
+        {
+            var ultimoNumero = await _context.Cobranza.MaxAsync(f => f.Numero);
+            return ultimoNumero;
+        }
     }
 }
