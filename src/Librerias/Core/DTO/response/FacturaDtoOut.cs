@@ -13,4 +13,10 @@
         public required string ObraSocial { get; set; }
 
     }
+
+    public class FacturaIdDtoOut
+    {
+        public int Id { get; set; }
+    }
+
 }

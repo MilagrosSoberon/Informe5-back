@@ -14,5 +14,7 @@ namespace Services
         Task Delete(int id);
 
         Task<IEnumerable<FacturaDtoOut>> GetFacturaByObraSocial(string obraSocial);
+
+        Task<FacturaIdDtoOut> GetIdFactura(int numero);
     }
 }

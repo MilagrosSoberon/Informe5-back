@@ -100,6 +100,16 @@ namespace Services
             }
 
         }
+       
+        public async Task<FacturaIdDtoOut> GetIdFactura( int numero )
+        {
+            var facturaId = await _context.Factura
+                .Where(n => n.Numero == numero)
+                .Select(f => new FacturaIdDtoOut { Id = f.Id })
+                .SingleOrDefaultAsync();
+
+            return facturaId;
+        }
 
          public async Task<IEnumerable<FacturaDtoOut>> GetFacturaByObraSocial(string obraSocial)
          {
