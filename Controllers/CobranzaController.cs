@@ -72,5 +72,12 @@ namespace agremiacion.Controllers
             { return NotFound(); }
         }
 
+        [HttpGet("ultimoNumero")]
+        public async Task<IActionResult> GetLastNumber()
+        {
+            var ultimoNumero = await _service.GetLastNumber();
+            return Ok(ultimoNumero);
+        }
+
     }
 }

@@ -147,5 +147,25 @@ namespace Services
 
             return banco;
         }*/
+
+
+        //probando PATCH para editar estado factura al cobrarla
+
+        public async Task UpdateEstadoPago(int id, int idEstadoPago)
+        {
+            var facturaToUpdate = await GetById(id);
+
+            if (facturaToUpdate is not null)
+            {
+                facturaToUpdate.IdEstadoPago = idEstadoPago;
+                await _context.SaveChangesAsync();
+            }
+            else
+            {
+                // Puedes lanzar una excepción o manejar de acuerdo a tus necesidades si la factura no se encuentra
+                throw new Exception($"Factura with ID {id} not found.");
+            }
+        }
+
     }
 }
